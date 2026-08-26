@@ -55,8 +55,7 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,111,186,.12)}
 .metric-btn:active{transform:scale(.97);background:var(--light)}
 .metric-name{display:block;font-size:14px;line-height:1.12}
 .metric-total{display:block;font-size:25px;line-height:1;margin-top:7px;color:var(--blue);font-weight:950}
-.metric-btn.set{border-color:#0b70b9;background:#f2f9fd}
-
+.metric-btn.set,.metric-btn.next-day{grid-column:1 / -1;width:50%;justify-self:center;border-color:#064f91;background:#064f91;color:#fff;box-shadow:0 4px 10px rgba(6,79,145,.22)} .metric-btn.set .metric-total,.metric-btn.next-day .metric-total{color:#fff}
 /* Totals/correction */
 .summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .summary-item{background:#f7fafc;border:1px solid var(--border);border-radius:13px;padding:11px}
@@ -209,7 +208,8 @@ const METRICS = [
   "Note Taking",
   "Scheduling",
   "Confirmation Call",
-  "Set"
+  "Set",
+  "Next Day"
 ];
 
 let employee = {name:"", email:"", store:"", goal:0};
@@ -258,8 +258,7 @@ function render(){
   $("progressBar").style.width=Math.min(100,(counts.Set/Math.max(1,employee.goal))*100)+"%";
 
   $("metrics").innerHTML=METRICS.map(m=>`
-    <button class="metric-btn ${m==="Set"?"set":""}" data-log="${escapeHtml(m)}">
-      <span class="metric-name">${escapeHtml(m)}</span>
+      <button class="metric-btn ${m==="Set"?"set":m==="Next Day"?"next-day":""}" data-log="${escapeHtml(m)}">      <span class="metric-name">${escapeHtml(m)}</span>
       <span class="metric-total">${counts[m]}</span>
     </button>
   `).join("");
