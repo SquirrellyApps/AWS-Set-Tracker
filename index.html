@@ -267,7 +267,8 @@ function render(){
 
   $("metrics").innerHTML=METRICS.map(m=>`
   <button class="metric-btn ${m==="Set"?"set":m==="Next Day"?"next-day":""}" data-log="${escapeHtml(m)}">      <span class="metric-total">${counts[m]}</span>
-
+    </button>
+  `).join("");
 
   $("corrections").innerHTML=METRICS.map(m=>`
     <div class="correction-row">
