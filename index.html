@@ -99,6 +99,25 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,111,186,.12)}
  .app{display:none!important}
  #printReport{display:block!important;color:#111;font-family:Arial,sans-serif;width:100%;page-break-after:avoid;break-after:avoid-page}
  #printReport h1{font-size:21px;margin:4px 0 10px;color:#064f91;page-break-after:avoid}
+#printReport{position:relative}
+#printReport .pdf-watermark{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:420px;
+  height:420px;
+  object-fit:contain;
+  opacity:.17;
+  z-index:0;
+  pointer-events:none;
+}
+#printReport h1,
+#printReport .meta,
+#printReport table{
+  position:relative;
+  z-index:1;
+}
  #printReport .meta{font-size:10.5px;line-height:1.35;margin-bottom:10px;page-break-after:avoid}
  #printReport table{width:100%;border-collapse:collapse;font-size:11px;page-break-inside:avoid}
  #printReport thead{display:table--group}
