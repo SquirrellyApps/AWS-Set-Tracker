@@ -1,8 +1,6 @@
-# AWS Set Tracker v5
+# AWS Set Tracker v6
 
-Changes from v4:
-- SET button is twice the width of the other metric buttons.
-- SET button is centered across the page.
-- SET button uses a solid full-color treatment with white text/count.
-- Everything else remains unchanged.
-- Service-worker cache bumped to v5.
+- Added the supplied All-Weather Seal logo centered on the login screen above the title/name/email fields.
+- Logo is not added to the main tracking screen or PDF.
+- All other v5 features remain unchanged.
+- Service worker cache bumped to v6.
