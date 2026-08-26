@@ -212,7 +212,7 @@ const METRICS = [
   "Set"
 ];
 
-let employee = {name:"", email:"", store:"", goal:15};
+let employee = {name:"", email:"", store:"", goal:0};
 let counts = {};
 let currentSession = false;
 
@@ -226,7 +226,7 @@ function saveSession(){
 }
 function clearSession(){
   localStorage.removeItem("awsTrackerSession");
-  employee={name:"",email:"",store:"",goal:15};
+  employee={name:"",email:"",store:"",goal:0};
   counts=blankCounts();
   currentSession=false;
 }
@@ -246,7 +246,7 @@ function showApp(){
   $("appScreen").classList.remove("hidden");
   $("employeeDisplay").textContent=employee.name;
   $("storeInput").value=employee.store||"";
-  $("goalInput").value=employee.goal||15;
+  $("goalInput").value=employee.goal||0;
   render();
 }
 function render(){
